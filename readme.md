@@ -35,7 +35,7 @@ Esta aplicación simula una **tienda online** con funcionalidades de gestión de
 
 ---
 
-## 🚀 Cómo correr el proyecto
+## Cómo correr el proyecto
 
 # 1. Clonar el repositorio
 git clone https://github.com/pauscalzo/TuPrimeraPaginaScalzo.git
@@ -74,6 +74,6 @@ http://127.0.0.1:8000/
 
 ---
 
-## ✍️ Autora
+## Autora
 
 Paula Scalzo  
