@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Mi perfil{% endblock %}
+
+{% block content %}
+<section class="page-section">
+  <div class="container">
+    <h2 class="section-heading text-uppercase text-center mb-4">Mi perfil</h2>
+
+    {% if request.user.profile.avatar %}
+      <div class="text-center mb-4">
+        <img src="{{ request.user.profile.avatar.url }}" class="img-thumbnail rounded-circle" width="150" alt="Avatar">
+      </div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <h4>Información de usuario</h4>
+      {{ user_form.as_p }}
+
+      <h4 class="mt-4">Información adicional</h4>
+      {{ profile_form.as_p }}
+
+      <div class="mt-3">
+        <button type="submit" class="btn btn-primary w-100 mb-2">Guardar cambios</button>
+        <a href="{% url 'password_change' %}" class="btn btn-outline-secondary w-100">Cambiar contraseña</a>
+      </div>
+      
+    </form>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-success mt-3">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+
+

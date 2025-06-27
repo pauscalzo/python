@@ -17,3 +17,6 @@ Thumbs.db
 
 staticfiles/
 
+db.sqlite3
+media/
+

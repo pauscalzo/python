@@ -3,12 +3,12 @@
 {% block title %}Crear Marca{% endblock %}
 
 {% block content %}
-<div class="container mt-5 py-5">
-    <h2 class="mt-5">Crear nueva marca</h2>
+<div class="container py-5">
+    <h2>Crear nueva marca</h2>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary w-100">Guardar</button>
     </form>
 </div>
 {% endblock %}

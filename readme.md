@@ -1,60 +1,79 @@
-TuPrimeraPaginaScalzo
-Proyecto realizado con Django para la entrega del curso de Python.
-Consiste en una tienda online que permite administrar productos, categorías y marcas. Se pueden crear, visualizar y buscar productos.
+# TuPrimeraPaginaScalzo   
+Proyecto final del curso de Python 2025 – Plataforma ecommerce desarrollada con Django.  
 
-- Funcionalidades principales
-* Herencia de plantillas con base.html
+Esta aplicación simula una **tienda online** con funcionalidades de gestión de productos, registro de usuarios, perfiles, mensajería entre usuarios, y más.  
 
-* Modelo con 3 clases: Producto, Categoría, Marca
+---
 
-* Formulario para:
+## Funcionalidades principales
 
-_Crear nueva marca
+- **Herencia de plantillas** (`base.html`) con bloques reutilizables
+- **Modelo principal: Producto** con:
+  - Nombre (CharField)
+  - Marca (CharField)
+  - Descripción enriquecida (CKEditor)
+  - Imagen (ImageField)
+  - Fecha de creación
+- Formularios para:
+  - Crear productos, categorías y marcas
+  - Editar y eliminar productos (solo para staff)
+- Visualización de productos en tarjetas
+- Detalle individual de cada producto
+- Buscador por nombre, categoría o marca
+- Páginas: Home, About, Productos
+- Diseño responsive basado en plantilla **Start Bootstrap**
+- Sistema de autenticación:
+  - Registro, login, logout
+  - Validaciones de email único
+  - Vista de perfil y edición de datos (nombre, email, avatar, bio, fecha)
+  - Cambio de contraseña desde el perfil
+- Uso de:
+  - 2 CBV
+  - 1 Mixin (`LoginRequiredMixin`)
+  - 1 Decorador (`@staff_member_required`)
+- Mensajes con `messages.success()` luego de acciones
 
-_Crear nueva categoría
+---
 
-_Cargar un nuevo producto (con imagen)
+## 🚀 Cómo correr el proyecto
 
-* Visualización de productos en cards con modales
-
-* Buscador para filtrar productos por nombre
-
-* Navegación con secciones ancladas (#nosotros, #comprar)
-
-* Diseño responsive basado en plantilla Start Bootstrap
-
-- Cómo probar el proyecto
-1- Clonar el repositorio:
-git clone https://github.com/usuario/TuPrimeraPaginaScalzo.git
+# 1. Clonar el repositorio
+git clone https://github.com/pauscalzo/TuPrimeraPaginaScalzo.git
 cd TuPrimeraPaginaScalzo
 
-2- Crear y activar entorno virtual:
+# 2. Crear entorno virtual
 python -m venv env
-source env/bin/activate  # o env\Scripts\activate en Windows
+source env/bin/activate  # En Windows: env\Scripts\activate
 
-3- Instalar dependencias:
+# 3. Instalar dependencias
 pip install -r requirements.txt
 
-4- Migrar base de datos:
+# 4. Migrar la base de datos
 python manage.py migrate
 
-5- Levantar el servidor:
+# 5. Crear superusuario (opcional para admin)
+python manage.py createsuperuser
+
+# 6. Levantar el servidor
 python manage.py runserver
 
-6- Acceder a:
+Accedé a la aplicación en:  
 http://127.0.0.1:8000/
 
-- Orden de prueba sugerido
-Desde la home, dirigite a:
+---
 
-+ Marca para crear una marca
+## Orden de prueba sugerido
 
-+ Categoría para crear una categoría
+1. Registrate o iniciá sesión
+2. Accedé al perfil y probá editar tus datos y cambiar tu avatar
+3. Cargá una nueva **categoría** y una nueva **marca**
+4. Cargá un **producto nuevo** (debe tener imagen y descripción enriquecida)
+5. Navegá al listado de productos y usá el **buscador**
+6. Hacé clic en “Leer más” para ver el detalle
+7. Si sos staff, probá **editar y eliminar** productos
 
-+ Producto para subir un producto (debe haber marcas y categorías previamente creadas)
+---
 
-Volvé a la home y verificá que los productos aparecen en la sección Productos
+## ✍️ Autora
 
-Probá el buscador ingresando el nombre de un producto, la marca o la categoría.
-
-Hecho por Paula Scalzo – Proyecto para curso de Python 2025
+Paula Scalzo  

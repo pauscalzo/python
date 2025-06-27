@@ -3,15 +3,19 @@
 {% block title %}Crear Producto{% endblock %}
 
 {% block content %}
-<div class="container mt-5 py-5">
-    <h2 class="mt-5">Crear nuevo producto</h2>
+<div class="container py-5">
+    <h2>Crear nuevo producto</h2>
+
+    {{ form.media }}  {# Esto carga CKEditor #}
+
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary w-100">Guardar</button>
     </form>
 </div>
 {% endblock %}
+
 
 
 
